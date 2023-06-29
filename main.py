@@ -13,17 +13,14 @@ st.header("YT QnA Bot 🤖")
 state = st.session_state
 site = st.text_input("Enter your URL here")
 if st.button("Build Model"):
-  
- 
   if site is None:
     st.info(f"""Enter YT to Build QnA Bot""")
   elif site:
-   
     st.write(str(site) + " starting to crawl..")
     try:
       YTbot.add("youtube_video", site)
       st.session_state['crawling'] = True
-  if site and ("crawling" in state):
+if site and ("crawling" in state):
       st.header("Ask your data")
       user_q = st.text_input("Enter your questions here")
       if st.button("Get Response"):
