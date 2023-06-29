@@ -29,7 +29,7 @@ if site and ("crawling" in state):
       if st.button("Get Response"):
         try:
           with st.spinner("Model is working on it..."):
-            result = YTbot.query(user_q)
+            result = YTbot.query(str(user_q))
             st.subheader('Your response:')
             st.write(result)
         except Exception as e:
