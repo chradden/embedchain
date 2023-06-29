@@ -20,6 +20,9 @@ if st.button("Build Model"):
     try:
       YTbot.add("youtube_video", site)
       st.session_state['crawling'] = True
+    except Exception as e:
+          st.error(f"An error occurred: {e}")
+          st.error('Oops, the GPT response resulted in an error :( Please try again with a different question.')
 if site and ("crawling" in state):
       st.header("Ask your data")
       user_q = st.text_input("Enter your questions here")
